@@ -30,6 +30,20 @@ export const createAppRouter = (queryClient: QueryClient) =>
             return { Component: TodoApp };
           },
         },
+        {
+          path: 'virtual-dom',
+          lazy: async () => {
+            const { VirtualDom } = await import('./routes/demo/virtual-dom');
+            return { Component: VirtualDom };
+          },
+        },
+        {
+          path: 'planets',
+          lazy: async () => {
+            const { Planets } = await import('./routes/demo/planets');
+            return { Component: Planets };
+          },
+        },
       ],
     },
     {
